@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Health Monitoring Dashboard</h1>
+            <div class="connection-status">
+                <span id="connectionIcon">⭘</span>
+                <span id="connectionText">Disconnected</span>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Charts row - PPG and BP side by side -->
+            <div class="charts-row">
+                <div class="card" id="ppg-card">
+                    <h2>PPG Signal</h2>
+                    <canvas id="ppgChart"></canvas>
+                    <div class="metrics">
+                        <span>Raw Value: <span id="ppgValue">--</span></span>
+                    </div>
+                </div>
+
+                <div class="card" id="bp-card">
+                    <h2>Blood Pressure</h2>
+                    <canvas id="bpChart"></canvas>
+                    <div class="metrics">
+                        <span>Systolic: <span id="systolicValue">--</span> mmHg</span>
+                        <span class="metric-spacer">|</span>
+                        <span>Diastolic: <span id="diastolicValue">--</span> mmHg</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="spo2-card">
+                <h2>SpO₂</h2>
+                <div class="value-display">
+                    <span id="spo2Value">--</span>
+                    <span>%</span>
+                </div>
+            </div>
+
+            <div class="card" id="temperature-card">
+                <h2>Skin Temperature</h2>
+                <div class="temperature-display">
+                    <span id="tempValue">--</span>°C
+                </div>
+            </div>
+
+            <div class="card" id="steps-card">
+                <h2>Step Count</h2>
+                <div class="step-counter">
+                    <span id="stepValue">0</span>
+                    <small>steps today</small>
+                </div>
+            </div>
+
+            <div class="card" id="ai-insights-card">
+                <h2>AI Insights</h2>
+                <ul id="insightsList">
+                    <!-- Insights will be dynamically inserted here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

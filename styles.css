@@ -1,0 +1,200 @@
+:root {
+    --primary-color: #2196F3;
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Add these new styles */
+.charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Two equal columns */
+    gap: 20px;
+    grid-column: 1 / -1;  /* Make charts row span full width */
+    margin-bottom: 20px;
+}
+
+#ppg-card,
+#bp-card {
+    margin: 0;  /* Remove default card margins */
+}
+
+/* Only AI insights should span full width now */
+#ai-insights-card {
+    grid-column: 1 / -1;
+}
+
+.card {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.metrics {
+    margin-top: 15px;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.value-display {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.temperature-display,
+.step-counter,
+.value-display {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.unit {
+    font-size: 0.5em;
+    margin-left: 5px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+#aiInsights ul {
+    list-style: none;
+    padding: 0;
+}
+
+#aiInsights li {
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Additional styles for AI Insights messages with types */
+#insightsList li {
+    margin: 10px 0;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+#insightsList li.positive {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+}
+
+#insightsList li.warning {
+    background-color: #fff3e0;
+    border-left: 4px solid #ff9800;
+}
+
+#insightsList li.alert {
+    background-color: #ffebee;
+    border-left: 4px solid #f44336;
+}
+
+/* Ensure the card is visible even when empty */
+#ai-insights-card:empty::after {
+    content: "No insights available";
+    display: block;
+    text-align: center;
+    color: #666;
+    padding: 20px;
+}
+
+.metric-spacer {
+    margin: 0 15px;
+    color: #ccc;
+}
+
+#insightsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.insight {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border-left: 4px solid;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.insight.positive {
+    border-left-color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.insight.warning {
+    border-left-color: #FFC107;
+    background: rgba(255, 193, 7, 0.1);
+}
+
+.insight.alert {
+    border-left-color: #F44336;
+    background: rgba(244, 67, 54, 0.1);
+}
+
+.insight.info {
+    border-left-color: #2196F3;
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.insight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.insight-value {
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.insight-message {
+    color: #666;
+    font-size: 0.9em;
+}
