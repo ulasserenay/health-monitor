@@ -1,5 +1,0 @@
-- spo2 boyutunu büyüt
-- bp ekle blood pressure grafiği
-- demo vide 1 dk
-- analizle ilgili yapilan çikarimlar nasil yapiliyor
-- tv'de denensin: servera bağla veya tvye indir 
